@@ -38,6 +38,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # bootstrap gem
 gem 'bootstrap'
+# for awsome
+gem "font-awesome-rails"
 
 # jquery
 gem 'jquery-rails'
