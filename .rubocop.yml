@@ -1,0 +1,14 @@
+# This is the configuration used to check the rubocop source code.
+
+require:
+  - rubocop/cop/internal_affairs
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - 'bin/*'
