@@ -13,10 +13,10 @@
             <% end %>
         </li>
         <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="#">
-            <svg class="bi"><use xlink:href="#file-earmark"></use></svg>
-            Orders
-            </a>
+            <%= link_to me_articles_path, class: 'nav-link d-flex align-items-center gap-2 active', 'aria-current': 'page' do %>
+                <svg class="bi"><use xlink:href="#file-earmark"></use></svg>
+                Articles
+            <% end %>
         </li>
         <li class="nav-item">
             <a class="nav-link d-flex align-items-center gap-2" href="#">

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsTitans</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'dashboard', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/public_navbar' %>
+    <div class="container-fluid">
+        <div class="row">
+            <%= render "layouts/dashboard_sidebar" %>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <%= yield %>
+            </main>
+        </div>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </body>
+</html>
