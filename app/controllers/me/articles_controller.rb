@@ -22,10 +22,10 @@ module Me
     def edit; end
 
     def create
-      @article = scope.new(params[:article])
+      @article = scope.new(article_params)
 
-      if @artilce.save
-        redirect_to @article
+      if @article.save
+        redirect_to me_article_path(@article)
       else
         render 'new'
       end
@@ -54,7 +54,7 @@ module Me
     end
 
     def article_params
-      params.require(:article).permit(:title, :content)
+      params.require(:article).permit(:title, :content, :user_id)
     end
   end
 end

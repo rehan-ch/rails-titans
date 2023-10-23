@@ -13,10 +13,10 @@
     <tbody>
     <% @articles.each_with_index do |article, index| %>
         <tr>
-            <td><%= article.index + 1 %></td>
+            <td><%= index + 1 %></td>
             <td><%= article.title %></td>
             <td><%= article.content %></td>
-            <td><%= link_to "show", me_article_path(@article) %></td>
+            <td><%= link_to "show", me_article_path(article) %></td>
         </tr>
     <% end %>
     </tbody>
