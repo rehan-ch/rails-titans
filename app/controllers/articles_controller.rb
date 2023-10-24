@@ -6,5 +6,8 @@ class ArticlesController < ApplicationController
 
     def show
         @article = Article.find(params[:id])
+        if current_user
+            @new_comment = @article.comments.new(user: current_user)
+        end
     end
 end
