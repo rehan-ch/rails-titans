@@ -33,7 +33,7 @@ module Me
 
     def update
       if @article.update(article_params)
-        redirect_to @article
+        redirect_to me_article_path(@article)
       else
         render 'edit'
       end
@@ -41,6 +41,7 @@ module Me
 
     def destroy
       @article.destroy
+      redirect_to me_articles_path
     end
 
     private

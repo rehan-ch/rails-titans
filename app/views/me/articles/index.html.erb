@@ -16,7 +16,11 @@
             <td><%= index + 1 %></td>
             <td><%= article.title %></td>
             <td><%= article.content %></td>
-            <td><%= link_to "show", me_article_path(article) %></td>
+            <td>
+                <%= link_to "show", me_article_path(article) %>
+                <%= link_to "edit", edit_me_article_path(article) %>
+                <%= link_to "delete", me_article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>
+            </td>
         </tr>
     <% end %>
     </tbody>
