@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   def full_name
+    return nil unless first_name && last_name
+
     "#{first_name} #{last_name}"
   end
 end

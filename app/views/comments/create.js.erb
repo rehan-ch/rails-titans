@@ -1,1 +1,2 @@
-$('#article_comments').html("<%= escape_javascript(render 'articles/comments') %>")
+$('#comment_content').val('');
+$('#article_comments').append("<%= escape_javascript(render 'articles/comment', comment: @comment) %>")

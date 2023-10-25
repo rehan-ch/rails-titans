@@ -1,0 +1,13 @@
+<div class='border p-2 mb-1 d-flex justify-content-between'>
+    <span>
+        <b>
+        <%= comment.user&.full_name || "User" %>
+        </b>
+    <p class='mb-0 ps-3'><%= comment.content %></p>
+    </span>
+    <span>
+        <%= link_to 'reply', "#" %>
+        <%= link_to 'edit', "#" %>
+        <%= link_to 'delete', "#" %>
+    </span>
+</div>

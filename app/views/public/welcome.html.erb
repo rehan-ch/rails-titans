@@ -15,7 +15,7 @@
             <h3 class="mb-0"><%= article.title %></h3>
             <div class="mb-1 text-body-secondary"><%= article.created_at %></div>
             <div class="mb-1 text-body-secondary">Author: <%= article.user.full_name %></div>
-            <p class="card-text mb-auto"><%= article.content %></p>
+            <p class="card-text mb-auto"><%= article.content.truncate(50) %></p>
             <%= link_to article_path(article), class: 'icon-link gap-1 icon-link-hover stretched-link' do %>
                 Continue reading
                 <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
