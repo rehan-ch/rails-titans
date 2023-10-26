@@ -2,6 +2,9 @@
 
 # articles model
 class Article < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :history
+
   belongs_to :user
   has_many :comments, dependent: :destroy, inverse_of: :article
 end
