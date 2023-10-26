@@ -5,6 +5,7 @@ class PublicController < ApplicationController
   def welcome
     @artilces = Article.all
   end
+
   def about; end
   def contact_us; end
 end
