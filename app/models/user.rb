@@ -12,16 +12,12 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   def full_name
-    return nil unless first_name && last_name
+    return "" unless first_name && last_name
 
     "#{first_name} #{last_name}"
   end
 
-  def slug_candidates
-    ["#tutorial-#{user.display_name}-#{title}"]
-  end
-
   def slug_candidate
-    ["#titan-#{user.full_name}"]
+    ["#titan-#{full_name}"]
   end
 end
