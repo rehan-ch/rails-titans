@@ -47,6 +47,8 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 # to generate slug
 gem 'friendly_id', '~> 5.4.0'
+# to generate fake data
+gem 'faker'
 
 group :development, :test do
   gem 'pry'
