@@ -14,16 +14,7 @@
     </p>
     <hr/>
     <h3>Comments</h3>
-        <%= form_with model: [ @article, @article.comments.build ] do |f|%>
-            <div class="form-group row mb-2">
-                <div class='col-md-11'>
-                    <%= f.text_field :content, class: 'form-control', placeholder: 'Enter Content' %>
-                </div>
-                <div class='col-md-1'>
-                    <%= f.submit 'Submit', class: 'w-20' %>
-                </div>
-            </div>
-        <%end%>
+        <%= render 'new_comment' if current_user %>
         <div id='article_comments'>
             <%= render 'comments' %>
         </div>
