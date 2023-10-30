@@ -16,9 +16,11 @@
             <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
             <h3 class="mb-0"><%= article.title %></h3>
             <div class="mb-1 text-body-secondary"><%= article.created_at %></div>
-            <div class="mb-1 text-body-secondary">Author: <%= article.user.full_name %></div>
+            <div class="mb-1 text-body-secondary">Author:
+              <%= link_to article.user.full_name.presence || article.user.email, user_path(article.user.slug) %>
+            </div>
             <p class="card-text mb-auto"><%= article.content.truncate(50) %></p>
-            <%= link_to article_path(article), class: 'icon-link gap-1 icon-link-hover stretched-link' do %>
+            <%= link_to article_path(article), class: 'icon-link gap-1 icon-link-hover' do %>
                 Continue reading
                 <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
             <% end %>

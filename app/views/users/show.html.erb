@@ -1,0 +1,16 @@
+<div class='container'>
+    <div class="border w-100 mb-5">
+        <h1 class='ml-3'><%= @user.full_name.titleize %></h1>
+    </div>
+    <ul>
+        <% @user.articles.each_with_index do |article| %>
+            <li>
+            <%= link_to article_path(article) do %>
+                <h4>
+                    <%= article.title %>
+                </h4>
+            <% end %>
+            </li>
+        <% end %>
+    </ul>
+</div>
