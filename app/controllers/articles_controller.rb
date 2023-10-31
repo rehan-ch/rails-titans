@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
     return unless current_user
 
     @comment = @article.comments.new(user: current_user)
