@@ -10,6 +10,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     return unless current_user
 
-    @new_comment = @article.comments.new(user: current_user)
+    @comment = @article.comments.new(user: current_user)
   end
 end

@@ -5,6 +5,10 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :article
 
+  def new
+    @comment = @article.comments.new(parent: comment)
+  end
+
   def edit
     @comment = Comment.find(params[:id])
   end
@@ -20,7 +24,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = @article.comments.find(params[:id])
+    @comment.destroy
+    redirect_to article_path(@article)
   end
 
   private
@@ -30,6 +36,10 @@ class CommentsController < ApplicationController
   end
 
   def article
-    @article ||= Article.find_by(id: params[:article_id])
+    @article ||= Article.friendly.find(params[:article_id])
+  end
+
+  def comment
+    @comment ||= @article.comments.friendly.find(params[:comment_id])
   end
 end
