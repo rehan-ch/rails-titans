@@ -3,7 +3,7 @@
 # article controller for general user
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.scoped
+    @articles = Article.all
   end
 
   def show
