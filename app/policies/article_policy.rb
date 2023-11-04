@@ -1,3 +1,4 @@
+# article policy for authorization
 class ArticlePolicy
     attr_reader :user, :article
   
