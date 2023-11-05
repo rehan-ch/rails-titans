@@ -50,6 +50,8 @@ gem 'friendly_id', '~> 5.4.0'
 # to generate fake data
 gem 'faker'
 
+gem "acts_as_follower"
+
 group :development, :test do
   gem 'pry'
   gem 'rubocop-rails', require: false
