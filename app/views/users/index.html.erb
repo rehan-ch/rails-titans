@@ -1,0 +1,17 @@
+<div class='container'>
+    <h1 class='text-center'>Users</h1>
+    <div>
+        <% @users.each_with_index do |user, index| %>
+            <div class='border d-flex justify-content-between px-3'>
+                
+                <h3>
+                    <%= index + 1 %>) <%= user.full_name.titleize  %>
+                </h3>
+                <div>
+                    <%= link_to "show", user_path(user) %>
+                    <%= link_to "articles", user_path(user) %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
