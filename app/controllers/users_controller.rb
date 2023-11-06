@@ -13,6 +13,9 @@ class UsersController < ApplicationController
   def follow
   end
 
+  def un_follow
+  end
+
   private
 
   def find_user

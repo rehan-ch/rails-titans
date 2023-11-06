@@ -6,6 +6,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   extend FriendlyId
   friendly_id :slug_candidate, use: :history
+  acts_as_followable
+  acts_as_follower
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   has_many :articles, dependent: :destroy
