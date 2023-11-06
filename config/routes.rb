@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   root to: 'public#welcome'
   resource :dashboard, only: [:show], controller: 'dashboard'
   resources :users, only: %I[show index] do
+    member do
+      get :follow
+      delete :un_follow
+    end
     resources :articles, only: %I[show index]
   end
   namespace :me do

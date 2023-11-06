@@ -10,6 +10,9 @@ class UsersController < ApplicationController
 
   def show; end
 
+  def follow
+  end
+
   private
 
   def find_user
