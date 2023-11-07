@@ -2,7 +2,8 @@
 
 # users controller for public users to show user profile and listing
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show]
+  before_action :authenticate_user!, only: %I[follow un_follow]
+  before_action :find_user, only: %I[show follow un_follow]
 
   def index
     @users = User.all
@@ -11,10 +12,10 @@ class UsersController < ApplicationController
   def show; end
 
   def follow
+    current_user.follow(@user)
   end
 
-  def un_follow
-  end
+  def un_follow; end
 
   private
 

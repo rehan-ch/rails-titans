@@ -9,10 +9,10 @@
                 </h3>
                 <div>
                     <%= link_to "show", user_path(user), class: 'btn btn-primary btn-sm' %>
-                    <% if current_user.following?(user) %>
-                        <%= link_to "un follow", un_follow_user_path(user), remote: true, class: 'btn btn-secondary btn-sm' %>
-                    <% else %>
-                        <%= link_to "follow", follow_user_path(user), remote: true, class: 'btn btn-secondary btn-small btn-sm' %>
+                    <% if current_user %>
+                        <span id="user_<%= user.slug %>">
+                            <%= render 'follow_unfollow', user: user %>
+                        </span>
                     <% end %>
                 </div>
             </div>
