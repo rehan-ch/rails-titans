@@ -1,1 +1,1 @@
-$("#user_<%= @user.slug %>").append("<%= escape_javascript(render 'follow_unfollow', user: @user) %>")
+$("#user_<%= @user.slug %>").html("<%= escape_javascript(render 'follow_unfollow', user: @user) %>")

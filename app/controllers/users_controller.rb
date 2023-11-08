@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: %I[show follow un_follow]
 
   def index
-    @users = User.all
+    @users = current_user ? User.where.not(id: current_user.id) : User.all
   end
 
   def show; end
@@ -15,7 +15,9 @@ class UsersController < ApplicationController
     current_user.follow(@user)
   end
 
-  def un_follow; end
+  def un_follow
+    current_user.stop_following(@user)
+  end
 
   private
 
