@@ -25,6 +25,7 @@ module Me
       @article = scope.new(article_params)
 
       if @article.save
+        ArticleMailer.with(article: @article, user: current_user).new_article.deliver_later
         redirect_to me_article_path(@article)
       else
         render 'new'
