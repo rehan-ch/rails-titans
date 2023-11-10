@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# article mailer
 class ArticleMailer < ApplicationMailer
   def new_article
     @user = params[:user]
