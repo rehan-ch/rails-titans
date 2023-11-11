@@ -3,6 +3,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'public#welcome'
+  get :about, to: 'public#about'
+  get :contact_us, to: 'public#contact_us'
+
   resource :dashboard, only: [:show], controller: 'dashboard'
   resources :users, only: %I[show index] do
     member do
