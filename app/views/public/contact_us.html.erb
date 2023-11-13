@@ -1,7 +1,7 @@
 <div class='text-center'>
     <h1>Contact Us</h1>
-    <form>
+    <%= form_with url: contact_us_path do |f| %>
         <%= f.input_field :email, label: 'email' %>
         <%= f.text_field :message, label: 'message' %>
-    </form>
+    </>
 </div>
