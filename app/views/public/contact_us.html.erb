@@ -1,7 +1,14 @@
-<div class='text-center'>
-    <h1>Contact Us</h1>
-    <%= form_with url: contact_us_path do |f| %>
-        <%= f.input_field :email, label: 'email' %>
-        <%= f.text_field :message, label: 'message' %>
-    </>
+<div class='d-flex align-items-center py-4 bg-body-tertiary'>
+  <main class="form-signin w-50 m-auto">
+    <%= form_for url: "#" do |f| %>
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <div class="form-floating">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "name@example.com", class: 'form-control' %>
+        <%= f.label :email, class: 'floatingInput' %>
+      </div>
+      <div class="form-floating">
+        <%= f.text_area :content, class: 'form-control' %>
+        <%= f.label :content, class: 'floatingInput' %>
+      </div>
+  </main>
 </div>
