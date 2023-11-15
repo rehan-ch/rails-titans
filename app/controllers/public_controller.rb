@@ -7,7 +7,9 @@ class PublicController < ApplicationController
   end
 
   def about; end
-  def contact_us; end
+  def contact_us
+    @contact_form_info = ContactFormInfo.new
+  end
 
   def create_contact_form_info
     @contact_form_info = ContactFormInfo.new(contact_form_info_params)
