@@ -1,14 +1,24 @@
 <div class='d-flex align-items-center py-4 bg-body-tertiary'>
   <main class="form-signin w-50 m-auto">
-    <%= form_for url: "#" do |f| %>
-      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <%= form_with(model: @contact_form_info, url: create_contact_form_info_public_path) do |f| %>
+      <h1 class="h3 mb-3 fw-normal"ppubl>Contact Us</h1>
       <div class="form-floating">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "name@example.com", class: 'form-control' %>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first name", placeholder: "First Name", class: 'form-control' %>
+        <%= f.label :first_name, class: 'floatingInput' %>
+      </div>
+      <div class="form-floating">
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "last name", placeholder: "Last Name", class: 'form-control' %>
+        <%= f.label :last_name, class: 'floatingInput' %>
+      </div>
+      <div class="form-floating">
+        <%= f.email_field :email, autofocus: true, autocmplete: "email", placeholder: "name@example.com", class: 'form-control' %>
         <%= f.label :email, class: 'floatingInput' %>
       </div>
       <div class="form-floating">
-        <%= f.text_area :content, class: 'form-control' %>
+        <%= f.text_area :content, placeholder: "Message ...", class: 'form-control', cols: 30, rows: 10 %>
         <%= f.label :content, class: 'floatingInput' %>
       </div>
+      <%= f.submit "Submit", class: 'btn btn-primary w-100 py-2 mt-3' %>
+    <% end %>
   </main>
 </div>

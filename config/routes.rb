@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get :about, to: 'public#about'
   get :contact_us, to: 'public#contact_us'
 
+  resource :public, only: [], controller: 'public' do
+    post :create_contact_form_info
+  end
+
   resource :dashboard, only: [:show], controller: 'dashboard'
   resources :users, only: %I[show index] do
     member do
