@@ -8,4 +8,19 @@ class PublicController < ApplicationController
 
   def about; end
   def contact_us; end
+
+  def create_contact_form_info
+    @contact_form_info = ContactFormInfo.new(contact_form_info_params)
+    if @contact_form_info.save
+      redirect_to root_path
+    else
+      render 'contact_us'
+    end
+  end
+
+  private
+
+  def contact_form_info_params
+    params.require(:contact_form_info).permit(:first_name, :last_name, :email, :content)
+  end
 end
