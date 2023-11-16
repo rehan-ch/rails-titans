@@ -1,0 +1,23 @@
+<div class="container mt-5">
+
+<h1>All Articles</h1>
+
+    <div class="row">
+        <% @articles.each do |article| %>
+            <!-- Sample Article Card (Repeat this block for each article) -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Article Image">
+                    <div class="card-body">
+                    <h5 class="card-title"><%= article.title %></h5>
+                    <p class="card-text">Auther: <%= link_to author_name(article), user_path(article.user.slug) %></p>
+                    <p class="card-text"><%= article.content.truncate(60)%></p>
+                    <%= link_to 'Read More', article_path(article), class: 'btn btn-primary' %>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat the above card block for each article in your collection -->
+        <% end %>   
+    </div>
+</div>
