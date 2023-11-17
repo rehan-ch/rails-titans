@@ -10,6 +10,6 @@ class ArticlePolicy
   end
 
   def update?
-    user.present?
+    user.present? && article.user == user
   end
 end
