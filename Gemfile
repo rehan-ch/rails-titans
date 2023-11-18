@@ -49,12 +49,14 @@ gem 'jquery-rails'
 gem 'friendly_id', '~> 5.4.0'
 # to generate fake data
 gem 'faker'
-
+# to follow other users
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 
 group :development, :test do
   gem 'pry'
   gem 'rubocop-rails', require: false
+  # to open email in browser
+  gem "letter_opener"
 end
 
 group :development do
