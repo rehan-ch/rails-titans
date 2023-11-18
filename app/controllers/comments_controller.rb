@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    authorize @post, :update?
   end
 
   def create
@@ -21,10 +22,12 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
+    authorize @post
   end
 
   def destroy
     @comment = @article.comments.find(params[:id])
+    authorize @post
     @comment.destroy
     redirect_to article_path(@article)
   end
