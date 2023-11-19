@@ -52,7 +52,7 @@ module Me
     end
 
     def find_article
-      @article = scope.find(params[:id])
+      @article = scope.friendly.find(params[:id])
     end
 
     def article_params
