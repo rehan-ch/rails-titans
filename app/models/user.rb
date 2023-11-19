@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy, inverse_of: :user
   has_many :comments, dependent: :destroy, inverse_of: :user
 
-  validates :first_name, :last_name, :email presence: true,
+  validates :first_name, :last_name, :email, presence: true
 
   def full_name
     return '' unless first_name && last_name
