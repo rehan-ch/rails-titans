@@ -1,10 +1,68 @@
-<html>
-    <head>
-    </head>
-    <body>
-        <h1>Welcome to new Article</h1>
-        <% @receivers.each do |user| %>
-            <%= user.email %>
-        <% end %>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Published Notification</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>New Article Published!</h2>
+    <p>Hello [User Name],</p>
+    <p>We're excited to inform you that [Author Name] has published a new article on Rails Titans.</p>
+    <p><strong>Article Title:</strong> <%= @article&.title %></p>
+    <p><strong>Summary:</strong> <%= @article&.content&.truncate(100) %></p>
+    <p>Read the full article by clicking the button below:</p>
+    <%= link_to 'Read Article', article_url(@article&.slug), class: 'btn'  %>
+
+    <div class="footer">
+      <p>If you wish to unsubscribe from these notifications, <a href="[Unsubscribe URL]">click here</a>.</p>
+    </div>
+  </div>
+
+</body>
+
 </html>
