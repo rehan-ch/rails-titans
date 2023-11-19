@@ -57,10 +57,6 @@
     <p><strong>Summary:</strong> <%= @article&.content&.truncate(100) %></p>
     <p>Read the full article by clicking the button below:</p>
     <%= link_to 'Read Article', article_url(@article&.slug), class: 'btn'  %>
-
-    <div class="footer">
-      <p>If you wish to unsubscribe from these notifications, <a href="[Unsubscribe URL]">click here</a>.</p>
-    </div>
   </div>
 
 </body>
