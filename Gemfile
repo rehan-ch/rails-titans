@@ -51,6 +51,8 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'faker'
 # to follow other users
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
+# omniautho for social login
+gem 'omniauth'
 
 group :development, :test do
   gem 'pry'
