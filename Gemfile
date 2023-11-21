@@ -53,6 +53,8 @@ gem 'faker'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 # omniautho for social login
 gem 'omniauth'
+# login with google
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'pry'
