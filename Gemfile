@@ -53,6 +53,8 @@ gem 'faker'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 # omniautho for social login
 gem 'omniauth'
+# to protect from forgery acctact
+gem "omniauth-rails_csrf_protection"
 # login with google
 gem 'omniauth-google-oauth2'
 
