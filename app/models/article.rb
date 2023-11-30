@@ -8,6 +8,5 @@ class Article < ApplicationRecord
   belongs_to :user, inverse_of: :articles
   has_many :comments, dependent: :destroy, inverse_of: :article
 
-  validates :title, :content, :user_id, presence: true
-
+  validates :title, :content, presence: true
 end
