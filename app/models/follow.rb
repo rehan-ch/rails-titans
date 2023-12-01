@@ -10,6 +10,6 @@ class Follow < ApplicationRecord
   belongs_to :follower,   polymorphic: true
 
   def block!
-    update_attribute(:blocked, true)
+    update(:blocked, true)
   end
 end
