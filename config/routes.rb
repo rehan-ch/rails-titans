@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
   namespace :me do
     resources :articles
+    resource :users
   end
 
   resources :articles, only: %I[show index] do
