@@ -6,8 +6,12 @@ module Me
     def edit; end
 
     def update
-      current_user.update(user_params)
-      redirect_to :back
+      if current_user.update(user_params)
+        flash[:success] = "User Updated successfully"
+      else
+        flash[:error] = "Something Wrong!!"
+      end
+      redirect_back fallback_location: root_path
     end
 
     private
