@@ -1,15 +1,16 @@
 # frozen_string_literal: true
 
 module Me
+  # users controller
   class UsersController < ApplicationController
     before_action :set_user, only: %I[edit update]
     def edit; end
 
     def update
       if current_user.update(user_params)
-        flash[:success] = "User Updated successfully"
+        flash[:success] = 'User Updated successfully'
       else
-        flash[:error] = "Something Wrong!!"
+        flash[:error] = 'Something Wrong!!'
       end
       redirect_back fallback_location: root_path
     end
@@ -19,6 +20,7 @@ module Me
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email)
     end
+
     def set_user
       @user = current_user
     end
